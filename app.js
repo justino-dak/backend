@@ -9,23 +9,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const moogodbUrl =
-//   "mongodb+srv://dakustin:dKb4wbcrUmACbwLl@cluster0.teikngd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-// mongoose
-//   .connect(moogodbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log("Connexion à MongoDB réussie !"))
-//   .catch(() => console.log("Connexion à MongoDB échouée !"));
-
-const mongoURI = "mongodb://localhost:27017/testdb";
-mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log("Connected to MongoDB with Mongoose");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(

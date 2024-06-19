@@ -1,7 +1,8 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +13,20 @@
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^9.3.0",
     "mongoose": "^8.4.1",
     "mongoose-unique-validator": "^5.0.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "parse-dashboard": "^5.4.0",
+    "parse-server": "^7.0.0"
+  },
+  "pkg": {
+    "assets": [
+      "./**/*"
+    ],
+    "scripts": "backend/server.js",
+    "targets": [
+      "node18-win-x64"
+    ]
   }
 }
